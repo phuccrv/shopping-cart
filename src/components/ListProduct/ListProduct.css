@@ -1,0 +1,8 @@
+.root-list {
+  margin: 20px 25px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}

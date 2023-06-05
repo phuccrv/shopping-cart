@@ -1,0 +1,29 @@
+.box-1 {
+  width: 200px !important;
+  height: 200px !important;
+  background-color: blueviolet;
+}
+
+.swiper-wrapper {
+  display: flex;
+  margin-left: 22px;
+}
+
+.box {
+  width: 150px !important;
+  height: 150px;
+  
+  /* background-color: b;
+   */
+   background-image: url("https://khoinguonsangtao.vn/wp-content/uploads/2022/08/hinh-nen-gai-xinh.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.child {
+  position: relative;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
