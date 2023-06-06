@@ -1,65 +1,60 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { UserAPI } from "../../api/User";
 
-//bất đồng bộ
-//đây là action bất đồng bộ
 export const register = createAsyncThunk(
   "register/fetchAuth",
   async (payload) => {
-    console.log("action ===>", payload);
-    //call API để đăng kí tài khoản
     const response = await UserAPI.register(payload);
-    console.log("response ===>", response);
-    const data = response.data;
-    //luu User
-    localStorage.setItem("user", JSON.stringify(data.user));
-    //luu accessTOken
+    console.log(response)
+    localStorage.setItem("user", JSON.stringify(response.user));
     localStorage.setItem(
       "accessTokenRegister",
-      JSON.stringify(data.accessToken)
+      JSON.stringify(response.accessToken)
     );
-
-    return data; //tra ve state cho  reducer
+    return response.user;
   }
 );
 
-//action bat dong bo
-
 export const login = createAsyncThunk("login/fetchAuth", async (payload) => {
-  //call len sever xem cos tai khoan
-
-  try {
-    const response = await UserAPI.login(payload);
-    console.log("response", response);
-    const user = response.data;
-    user && localStorage.setItem("user", JSON.stringify(user.user));
-    user &&
-      localStorage.setItem(
-        "accessTokenRegister",
-        JSON.stringify(user.accessToken)
-      );
-    return user;
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await UserAPI.login(payload);
+  console.log(response);
+  localStorage.setItem("user", JSON.stringify(response.user));
+  localStorage.setItem(
+    "accessTokenRegister",
+    JSON.stringify(response.accessToken)
+  );
+  return response.user;
 });
+
 const userSlice = createSlice({
   name: "user",
-  initialState: JSON.parse(localStorage.getItem("user")) ||  {},
+  initialState: {
+    isLoggedIn: false,
+    email: "",
+    username: "",
+  },
+  reducers: {
+    logout: (state) => {
+      state.isLoggedIn = false;
+      state.email = "";
+      localStorage.removeItem("user");
+      localStorage.removeItem("accessTokenRegister");
+    },
+  },
   extraReducers: {
     [register.fulfilled]: (state, action) => {
-      state = action.payload.user;
-
-      //set lai state cho User
-      return state;
+      state.isLoggedIn = true;
+      state.email = action.payload.email;
+      state.username = action.payload.username;
     },
     [login.fulfilled]: (state, action) => {
-      state = action.payload.user;
-      return state;
+      state.isLoggedIn = true;
+      state.email = action.payload.email;
+      state.username = action.payload.username;
     },
   },
 });
 
-const { actions, reducer } = userSlice;
+export const { logout } = userSlice.actions;
 
-export default reducer;
+export default userSlice.reducer;

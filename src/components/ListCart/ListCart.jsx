@@ -1,25 +1,25 @@
-import { CaretLeftOutlined } from "@ant-design/icons";
+import { BsArrowLeftCircleFill } from "react-icons/bs";
 import { Col, Divider } from "antd";
 import React from "react";
 import CartProduct from "../CartProduct/CartProduct";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import"./ListCart.css"
 
 const ListCart = () => {
   const cartState = useSelector((state) => state.cart);
 
   return (
     <Col span={12} style={{ margin: "30px 0 0 40px" }}>
-      <div style={{}}>
-        <NavLink to={"/"}>
-          <CaretLeftOutlined style={{ fontSize: "17px" }} />{" "}
+      <div className="backHome">
+        <NavLink className={"icon-back"} to={"/"}>
+          <BsArrowLeftCircleFill  />
         </NavLink>
         <b>Shopping Continue</b>{" "}
       </div>
       <Divider />
       <div>
-        <h3>Shopping Cart</h3>
-        <p>You have 3 item your card</p>
+        <h3>Your Cart</h3>
       </div>
       {cartState.map((product) => (
         <CartProduct product={product} />

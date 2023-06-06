@@ -1,4 +1,4 @@
-import { axiosClient } from "./AxiosClient";
+import axiosClient  from "./AxiosClient";
 
 export class UserAPI {
   static register(param) {

@@ -1,0 +1,9 @@
+.icon-back  {
+    padding: 0px 10px;
+    font-size: 20px;
+}
+
+.backHome{
+    display: flex;
+    align-items: center;
+}

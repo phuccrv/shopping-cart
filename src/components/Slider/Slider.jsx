@@ -1,13 +1,9 @@
 import React from "react";
-// import Swiper core and required modul
 import Slider from "react-slick";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-
 import "./Slider.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ProductAPI from "../../api/Product";
-import ListProduct from "../ListProduct/ListProduct";
 import { useSelector } from "react-redux";
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -62,24 +58,19 @@ const SliderComponent = () => {
   const productList = useSelector((state) => state.products);
   const settings = {
     infinite: true,
-    slidesToShow: 7,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 3000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
   return (
-    <Slider {...settings}>
+    <Slider className="slider" {...settings}>
       {productList.map((product) => (
-        <img
-          src={product.image}
-          width={"200px"}
-          height={"200px"}
-          style={{ objectFit: "contain" }}
-        />
+        <img src={product.image} />
       ))}
     </Slider>
   );

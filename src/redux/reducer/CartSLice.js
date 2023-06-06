@@ -18,8 +18,7 @@ const CartSlice = createSlice({
       );
       if (findIndexProduct >= 0) {
         state[findIndexProduct].quantity += 1;
-        state[findIndexProduct].total =
-          state[findIndexProduct].quantity * state[findIndexProduct].price;
+        state[findIndexProduct].total = state[findIndexProduct].quantity * state[findIndexProduct].price;
       } else {
         let quantity = 1;
         state.push({ ...action.payload, quantity });
@@ -28,7 +27,20 @@ const CartSlice = createSlice({
       return state;
     },
     handleQuantity: (state, action) => {
-      //do something
+      const { id, type } = action.payload;
+      const product = state.find((product) => product.id === id);
+
+      if (product) {
+        if (type === "increase") {
+          product.quantity += 1;
+        } else if (type === "decrease") {
+          if (product.quantity > 1) {
+            product.quantity -= 1;
+          }
+        }
+        product.total = product.quantity * product.price;
+        localStorage.setItem("carts", JSON.stringify(state));
+      }
     },
     deleteCart: (state, action) => {
       //do something

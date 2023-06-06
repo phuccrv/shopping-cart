@@ -64,9 +64,9 @@ form h3{
 }
 
 form img{
-    height: 60px;
-    width: 80px;
-    margin-left: 120px;
+    height: 100px;
+    width: 200px;
+    margin-left: 70px;
 }
 .link-register{
     display: inline-block;

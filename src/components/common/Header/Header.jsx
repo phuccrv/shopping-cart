@@ -1,13 +1,21 @@
 import React from "react";
 import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
-import { SearchOutlined, ShoppingCartOutlined } from "@ant-design/icons";
-import Avatar from "antd/es/avatar/avatar";
+import { SearchOutlined } from "@ant-design/icons";
 import Layout from "antd/es/layout/layout";
 import { BsFillBagFill } from "react-icons/bs";
-
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../../redux/reducer/UserSlice";
 const { Header } = Layout;
+
 const HeaderHome = () => {
+  const { isLoggedIn, username } = useSelector((state) => state.user);
+  console.log(1111,username);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <Header className="header">
       <Link to={"/"}>
@@ -30,7 +38,16 @@ const HeaderHome = () => {
           </div>
         </NavLink>
       </div>
-      <NavLink className={"btn-login"} to={"/Auth/SignIn"}><p>login</p></NavLink>
+      {isLoggedIn ? (
+        <div className="user-mail">
+          <p>{username}</p>
+          <button className="btn-logout" onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <NavLink className="btn-login" to="/Auth/SignIn">
+          <p>Login</p>
+        </NavLink>
+      )}
     </Header>
   );
 };

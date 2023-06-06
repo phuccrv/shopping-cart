@@ -1,47 +1,81 @@
-.footer{
+.footer {
     display: flex;
     background-color: #0c4821;
     color: white;
     height: 300px;
 }
 
-.imh-logo img{
+.imh-logo img {
     height: 160px;
     margin-top: 50px;
 }
 
-.footer-content-text{
+.footer-content-text {
     margin-top: 50px;
     width: 260px;
     padding: 0px 50px;
 }
 
-.footer-content-text h2{
+.footer-content-text h2 {
     width: 200px;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
-.footer-content-text p{
+.footer-content-text p {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 40px;
     font-size: 15px;
-    
+
 }
 
-.footer-content-text p:hover{
+.footer-content-text p:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
-.icon-media{
+.icon-media {
     font-size: 35px;
     cursor: pointer;
 }
 
-.icon-media svg:hover{
+.icon-media svg:hover {
     font-size: 36px;
     transition: 0.3s ease-in-out;
     color: #218c74;
 }
+
+@media screen and (max-width: 1017px) {
+    .imh-logo img {
+        height: 120px;
+    }
+
+    .footer-content-text {
+        margin-top: 50px;
+        width: 180px;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    .footer-content-text:last-child {
+        display: none;
+    }
+
+    .footer-content-text h2 {
+        width: 130px;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 432px) {
+    .footer-content-text{
+        display: none;
+    }
+    .imh-logo img {
+        height: 195px;
+    }
+  }

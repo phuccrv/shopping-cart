@@ -15,7 +15,7 @@ const CardProduct = (props) => {
     dispatch(add);
 
     const functionThatReturnPromise = () =>
-      new Promise((resolve) => setTimeout(resolve, 3000));
+      new Promise((resolve) => setTimeout(resolve, 1000));
     toast.promise(functionThatReturnPromise, {
       pending: "Adding to cart",
       success: "Add to cart successfully 👌",

@@ -1,30 +1,34 @@
-import {
-  CaretDownOutlined,
-  CaretUpOutlined,
-  DeleteOutlined,
-} from "@ant-design/icons";
+import { BsFillCaretUpSquareFill, BsFillCaretDownSquareFill, BsFillTrashFill,} from"react-icons/bs";
 import React from "react";
 import "./CartProduct.css";
+import { useDispatch } from "react-redux";
+import { handleQuantity } from "../../redux/reducer/CartSLice";
+
 const CartProduct = (props) => {
+  const dispatch = useDispatch();
   const { product } = props;
+
+  const handleQuantityChange = (type) => {
+    dispatch(handleQuantity({ id: product.id, type }));
+  };
+
   return (
     <section className="cart-product">
       <img src={product.image} style={{ width: "100px", height: "100px" }} />
-      <div>
+      <div className="title-name">
         <h4>{product.name}</h4>
         <p>{product.type}</p>
       </div>
       <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
         <p>{product.quantity}</p>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <CaretUpOutlined />
-          <CaretDownOutlined />
+        <div className="icon-updown">
+          <BsFillCaretUpSquareFill onClick={() => handleQuantityChange("increase")} />
+          <BsFillCaretDownSquareFill  onClick={() => handleQuantityChange("decrease")} />
         </div>
       </div>
       <p>$ {product.total ? product.total : product.price}</p>
-
-      <div style={{ alignContent: "end", marginRight: "10px" }}>
-        <DeleteOutlined style={{ fontSize: "24px" }} />
+      <div className="icon-delete">
+        <BsFillTrashFill />
       </div>
     </section>
   );

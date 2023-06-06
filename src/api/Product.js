@@ -1,4 +1,4 @@
-import { axiosClient } from "./AxiosClient";
+import axiosClient  from "./AxiosClient";
 
 class ProductAPI {
   //lay tat ca

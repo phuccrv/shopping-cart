@@ -81,3 +81,83 @@
   color: white;
   font-weight: bold;
 }
+
+.user-mail{
+  display: flex;
+}
+
+.btn-logout{
+  cursor: pointer;
+  border-radius: 40px;
+  border: 1px solid #218c74;
+  background-color: white;
+  color: black;
+  display: flex;
+  padding-left: 12px;
+  padding-top: 17px;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  margin: 15px 50px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-logout:hover{
+  background-color: #218c74;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* responsive */
+
+@media screen and (max-width: 1017px) {
+  .btn-logout{
+    margin: 70px 10px;
+  }
+  .header-search input{
+    padding: 10px 140px 10px 40px;
+  }
+  .user-mail {
+    display: flex;
+    align-items: baseline;
+}
+}
+
+@media screen and (max-width: 776px) {
+  .btn-logout{
+    margin-right: 50px;
+  }
+
+  .icon-shopping{
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .btn-logout{
+    margin-right: 50px;
+  }
+
+  .icon-shopping {
+    margin-left: 140px;
+}
+.header-search .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+}
+}
+
+@media screen and (max-width: 432px) {
+  .header-search{
+    display: none;
+  }
+  .btn-login{
+    margin-right: 10px;
+  }
+  .icon-shopping {
+    margin-left: 90px;
+}
+}

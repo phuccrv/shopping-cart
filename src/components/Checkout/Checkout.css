@@ -1,15 +1,73 @@
-.input-list {
+.choose {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
 }
 
-.input-list input {
-  padding: 10px;
-  width: 70%;
+.choose input {
+  width: 20px;
+  height: 20px;
+  margin-top: 30px;
+}
+
+.choose label {
+  margin-left: 10px;
+  background-color: #ffffff76;
+  padding: 5px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.form-inf label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+input::placeholder {
+  color: #ffa502;
+}
+
+.form-inf {
+  border-radius: 10px;
+  width: 500px;
+  padding: 20px;
+  margin-right: 60px;
+  color: rgb(0, 0, 0);
+  -webkit-box-shadow: 5px 5px 11px 0px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 5px 5px 11px 0px rgba(173, 173, 173, 1);
+  box-shadow: 5px 5px 11px 0px rgba(173, 173, 173, 1);
+}
+
+.form-inf>input {
+  border: none;
+  border-bottom: 2px solid #000000;
   outline: none;
-    border-radius: 10px;
-    border: none;
+}
+
+.form-inf button {
+  background-color: #245d43;
+  border: none;
+  transition: 0.3s ease-in;
+}
+
+.form-inf button:hover {
+  background-color: #ffa502;
+  color: #000000;
+}
+
+/* responsive */
+@media screen and (min-width: 876px) {
+  .form-inf{
+    width: 365px;
+    margin-right: 20px;
+    margin-top: 150px;
+  }
+  label{
+    margin-top: 10px;
+  }
+  input{
+    height: 35px;
+  }
+  button{
+    margin-top: 15px;
+  }
 }
