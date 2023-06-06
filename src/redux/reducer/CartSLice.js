@@ -43,7 +43,12 @@ const CartSlice = createSlice({
       }
     },
     deleteCart: (state, action) => {
-      //do something
+      const productId = action.payload;
+      const index = state.findIndex((product) => product.id === productId);
+      if (index !== -1) {
+        state.splice(index, 1);
+        localStorage.setItem("carts", JSON.stringify(state));
+      }
     },
   },
 });

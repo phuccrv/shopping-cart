@@ -2,7 +2,7 @@ import { BsFillCaretUpSquareFill, BsFillCaretDownSquareFill, BsFillTrashFill,} f
 import React from "react";
 import "./CartProduct.css";
 import { useDispatch } from "react-redux";
-import { handleQuantity } from "../../redux/reducer/CartSLice";
+import { deleteCart, handleQuantity } from "../../redux/reducer/CartSLice";
 
 const CartProduct = (props) => {
   const dispatch = useDispatch();
@@ -10,6 +10,9 @@ const CartProduct = (props) => {
 
   const handleQuantityChange = (type) => {
     dispatch(handleQuantity({ id: product.id, type }));
+  };
+  const handleDelete = () => {
+    dispatch(deleteCart(product.id));
   };
 
   return (
@@ -28,7 +31,7 @@ const CartProduct = (props) => {
       </div>
       <p>$ {product.total ? product.total : product.price}</p>
       <div className="icon-delete">
-        <BsFillTrashFill />
+        <BsFillTrashFill onClick={handleDelete}/>
       </div>
     </section>
   );
