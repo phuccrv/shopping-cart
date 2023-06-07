@@ -7,6 +7,7 @@ import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import UpLoadImage from "./components/UpLoadImage/UpLoadImage";
 import { Upload } from "antd";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="signUp" element={<SignUp />} />
         </Route>
 
-
+        <Route path="/ProductDetail" element={<ProductDetail />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/uploadimage" element={<UpLoadImage />} />
         

@@ -27,6 +27,7 @@ const CardProduct = (props) => {
     <div className="root-card">
       <img src={product.image} width={100} height={100} />
       <div
+        onClick={() => props.handleDetail(product)}
         style={{
           marginTop: 20,
           display: "flex",
@@ -37,7 +38,7 @@ const CardProduct = (props) => {
       >
         <h4>{product.name}</h4>
         <p>{product.type}</p>
-        <p>$ {(product.price).toLocaleString()}</p>
+        <p>$ {product.price.toLocaleString()}</p>
       </div>
       <div
         className="icon"

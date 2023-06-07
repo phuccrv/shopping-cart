@@ -4,30 +4,41 @@ import ProductAPI from "../../api/Product";
 export const handleCallProductAPI = createAsyncThunk(
   "products/fetchAllProduct",
   async (action) => {
-    //call API
-    //thay vì call ở component thì mình call trực tiếp tại redux
+    // Call API
     const response = await ProductAPI.getAllProduct();
     const data = response;
     console.log("data sau khi call:", data);
-    //lưu vào LocalStorage
+    // Lưu vào LocalStorage
     localStorage.setItem("carts", JSON.stringify(data));
-    //trả về một payload
+    // Trả về một payload
     return data;
+  }
+);
+
+export const searchProducts = createAsyncThunk(
+  "products/searchProducts",
+  async (searchTerm) => {
+    const products = JSON.parse(localStorage.getItem("carts")) || [];
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.price.toString().includes(searchTerm)
+    );
+    return filteredProducts;
   }
 );
 
 const ProductSlice = createSlice({
   name: "product",
   initialState: localStorage.getItem("products") || [],
-  //thực hiện với bất đồng bộ
+  reducers: {},
   extraReducers: {
-    //action chính là kết quả trả về của hàm handleCallProductAPI
     [handleCallProductAPI.fulfilled]: (state, action) => {
+      return (state = action.payload);
+    },
+    [searchProducts.fulfilled]: (state, action) => {
       return (state = action.payload);
     },
   },
 });
 
-export const { actions, reducer } = ProductSlice;
-
-export default reducer;
+export default ProductSlice.reducer;

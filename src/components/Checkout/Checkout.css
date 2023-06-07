@@ -7,15 +7,17 @@
 .choose input {
   width: 20px;
   height: 20px;
+  margin: 0px;
 }
 
 .choose label {
-  margin-left: 10px;
   background-color: #ffffff76;
   padding: 5px;
   width: 200px;
+  font-size: 12px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  
 }
 
 .form-inf label {
@@ -31,7 +33,7 @@ input::placeholder {
 .form-inf {
   border-radius: 10px;
   width: 500px;
-  margin: 100px 60px 0 0;
+  margin: 150px 60px 100px 0;
   padding: 20px;
   color: rgb(0, 0, 0);
   -webkit-box-shadow: 5px 5px 11px 0px rgba(173, 173, 173, 1);

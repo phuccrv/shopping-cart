@@ -22,7 +22,7 @@ img {
   color: #ff9f1a;
   font-size: 20px;
 }
-@media (max-width: 670px) {
+@media (min-width: 670px) {
   .root-card{
     width: 100%;
   }

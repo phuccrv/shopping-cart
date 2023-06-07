@@ -10,7 +10,6 @@ const CartSlice = createSlice({
   //reducers chỉ thao tác với đồng bộ
   reducers: {
     addToCart: (state, action) => {
-      console.log("action ==>", action);
       //thu 1 co roi cap nhat thang quanity
       //thu 2 chua co them moi
       const findIndexProduct = state.findIndex(
