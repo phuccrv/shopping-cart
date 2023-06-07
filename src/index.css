@@ -12,3 +12,7 @@ code {
     monospace;
 }
 
+body, html{
+  overflow-x: hidden;
+}
+

@@ -29,7 +29,7 @@ const CartProduct = (props) => {
           <BsFillCaretDownSquareFill  onClick={() => handleQuantityChange("decrease")} />
         </div>
       </div>
-      <p>$ {product.total ? product.total : product.price}</p>
+      <p>$ {(product.total ? product.total : product.price).toLocaleString()}</p>
       <div className="icon-delete">
         <BsFillTrashFill onClick={handleDelete}/>
       </div>

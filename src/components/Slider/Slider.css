@@ -33,3 +33,9 @@
   object-fit: cover;
   height: 350px;
 }
+
+.slider img{
+  margin-top: 40px;
+  max-width: 300px;
+  min-width: 200px;
+}

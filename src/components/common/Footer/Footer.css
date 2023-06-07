@@ -1,7 +1,7 @@
 .footer {
     display: flex;
-    background-color: #0c4821;
-    color: white;
+    border-top: 2px solid #218c74;
+    color: #218c74;
     height: 300px;
 }
 

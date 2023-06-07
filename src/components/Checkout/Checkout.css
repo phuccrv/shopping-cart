@@ -1,12 +1,12 @@
 .choose {
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .choose input {
   width: 20px;
   height: 20px;
-  margin-top: 30px;
 }
 
 .choose label {
@@ -15,11 +15,13 @@
   padding: 5px;
   width: 200px;
   border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 .form-inf label {
   font-weight: bold;
   text-transform: uppercase;
+  margin: 10px;
 }
 
 input::placeholder {
@@ -29,8 +31,8 @@ input::placeholder {
 .form-inf {
   border-radius: 10px;
   width: 500px;
+  margin: 100px 60px 0 0;
   padding: 20px;
-  margin-right: 60px;
   color: rgb(0, 0, 0);
   -webkit-box-shadow: 5px 5px 11px 0px rgba(173, 173, 173, 1);
   -moz-box-shadow: 5px 5px 11px 0px rgba(173, 173, 173, 1);
@@ -39,8 +41,9 @@ input::placeholder {
 
 .form-inf>input {
   border: none;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid;
   outline: none;
+  height: 30px;
 }
 
 .form-inf button {
@@ -55,14 +58,11 @@ input::placeholder {
 }
 
 /* responsive */
-@media screen and (min-width: 876px) {
+@media screen and (max-width: 876px) {
   .form-inf{
     width: 365px;
     margin-right: 20px;
     margin-top: 150px;
-  }
-  label{
-    margin-top: 10px;
   }
   input{
     height: 35px;

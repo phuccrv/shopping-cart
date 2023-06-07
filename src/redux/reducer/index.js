@@ -6,4 +6,5 @@ export const rootReducer = {
   cart: reducerCart,
   products: reducerProduct,
   user: reducerUser,
+  
 };

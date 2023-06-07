@@ -29,7 +29,7 @@ const SignIn = () => {
     } catch (error) {
       // Xử lý lỗi đăng nhập
       console.log(error);
-      setLoginError("email or password is incorrect");
+      setLoginError("Email or password is incorrect");
     }
   };
 
@@ -54,8 +54,8 @@ const SignIn = () => {
           name="password"
           onChange={handleInputChange}
         />
-        <button type="submit">LogIn</button>
         {loginError && <p>{loginError}</p>}
+        <button type="submit">LogIn</button>
         <NavLink className={"link-register"} to={"/auth/signUp"}>
           Register in here ^.^
         </NavLink>

@@ -26,7 +26,7 @@ const SignUp = () => {
 
       toast.success("Sign Up Success",{
         position:"top-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -37,11 +37,11 @@ const SignUp = () => {
       })
       setTimeout(() => {
         data && navigate("/auth/SignIn");
-      }, 4000);
+      }, 2000);
     } catch (err) {
-      toast.success(err.message,{
+      toast.error(err.message,{
         position:"top-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -84,7 +84,7 @@ return (
       <button to={"/auth/SignIn"}>Register</button>
 
       <NavLink className={"link-login"} to={"/auth/SignIn"}>
-        if you have account, Login in here.
+        If you have account, Login in here.
       </NavLink>
     </form>
     <ToastContainer/>

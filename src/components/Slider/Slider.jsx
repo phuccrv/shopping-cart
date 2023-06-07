@@ -17,8 +17,9 @@ const NextArrow = (props) => {
         width: "20px",
         height: "20px",
         borderRadius: "50%",
-        backgroundColor: "grey",
+        backgroundColor: "white",
         textAlign: "center",
+        cursor: "pointer",
       }}
       onClick={onClick}
     >
@@ -42,9 +43,10 @@ const PrevArrow = (props) => {
         width: "20px",
         height: "20px",
         borderRadius: "50%",
-        backgroundColor: "grey",
+        backgroundColor: "white",
         textAlign: "center",
         zIndex: 4,
+        cursor: "pointer",
       }}
     >
       <p className="child" style={{ zIndex: 4 }}>

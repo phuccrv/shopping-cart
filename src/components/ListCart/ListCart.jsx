@@ -8,9 +8,14 @@ import"./ListCart.css"
 
 const ListCart = () => {
   const cartState = useSelector((state) => state.cart);
+  console.log(111,cartState);
+
+  // tính tổng giá tiền
+  const total = cartState.reduce((total, product) => total + product.price * product.quantity, 0);
+
 
   return (
-    <Col span={12} style={{ margin: "30px 0 0 40px" }}>
+    <Col  span={12} style={{ margin: "100px 0 0 40px" }}>
       <div className="backHome">
         <NavLink className={"icon-back"} to={"/"}>
           <BsArrowLeftCircleFill  />
@@ -24,6 +29,9 @@ const ListCart = () => {
       {cartState.map((product) => (
         <CartProduct product={product} />
       ))}
+      <div>
+        <h2>Total: ${(total).toLocaleString()}</h2>
+      </div>
     </Col>
   );
 };

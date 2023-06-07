@@ -50,11 +50,14 @@ const CartSlice = createSlice({
         localStorage.setItem("carts", JSON.stringify(state));
       }
     },
+    checkOutCart: (state, action) => {
+      // chức năng check out thanh toán
+    },
   },
 });
 
 const { actions, reducer } = CartSlice;
 
-export const { addToCart, deleteCart, handleQuantity } = actions;
+export const { addToCart, deleteCart, handleQuantity, checkOutCart } = actions;
 
 export default reducer;

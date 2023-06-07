@@ -10,12 +10,20 @@ const { Header } = Layout;
 
 const HeaderHome = () => {
   const { isLoggedIn, username } = useSelector((state) => state.user);
-  console.log(1111,username);
+  const cartItems  = useSelector((state) => state.cart);
+  console.log(cartItems); 
   const dispatch = useDispatch();
+  
+  // tổng số lcartItemsượng sản phẩm trong giỏ hàng
+  const totalItems = cartItems?.reduce((total, item) => total + item.quantity, 0) || 0;
+  console.log("số sản phẩm:", totalItems);
 
+  
+  // Xử lý logout
   const handleLogout = () => {
     dispatch(logout());
   };
+  
   return (
     <Header className="header">
       <Link to={"/"}>
@@ -32,9 +40,9 @@ const HeaderHome = () => {
       </div>
       <div className="header-more">
         <NavLink className={"icon-shopping"} to={"/cart"}>
-          <BsFillBagFill />
+          <BsFillBagFill className="icon-cart"/>
           <div className="number-cart">
-            <p>0</p>
+            <p>{totalItems}</p> {/* Hiển thị số lượng sản phẩm */}
           </div>
         </NavLink>
       </div>

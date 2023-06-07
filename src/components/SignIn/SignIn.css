@@ -108,3 +108,19 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+form p{
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.link-register{
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 30px 0 0 0;
+}
