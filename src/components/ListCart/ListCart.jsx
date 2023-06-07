@@ -8,7 +8,6 @@ import "./ListCart.css";
 
 const ListCart = () => {
   const cartState = useSelector((state) => state.cart);
-  console.log(111, cartState);
 
   // tính tổng giá tiền
   const total = cartState.reduce(

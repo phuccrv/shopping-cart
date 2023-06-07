@@ -9,9 +9,8 @@ import {
   BiCaretRight,
   BiCaretLeftCircle,
 } from "react-icons/bi";
-
 import { useDispatch } from "react-redux";
-import { handleQuantity } from "../../redux/reducer/CartSLice";
+import { addToCart, handleQuantity } from "../../redux/reducer/CartSLice";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -25,21 +24,23 @@ const ProductDetail = () => {
   const handleQuantityChange = (type) => {
     if (type === "increase") {
       setQuantity(quantity + 1);
-    } else if (type === "decrease" && quantity > 1) {
+      dispatch(handleQuantity({ id, type: "increase" })); // Gọi handleQuantity từ CartSlice
+    } else if (type === "decrease" && quantity > 0) {
       setQuantity(quantity - 1);
+      dispatch(handleQuantity({ id, type: "decrease" })); // Gọi handleQuantity từ CartSlice
     }
   };
 
-  //hàm gọi tăng giảm
-  const addToCart = () => {
-    dispatch(handleQuantity({ id, quantity }));
+  // hàm gọi thêm sản phẩm vào giỏ hàng
+  const handleAddToCart = (state) => {
+    dispatch(addToCart({ id, quantity, name, detail, price, image }));
   };
 
   return (
     <div>
       <HeaderHome />
       <NavLink to={"/"} className="back-home">
-        <BiCaretLeftCircle className="home"/>
+        <BiCaretLeftCircle className="home" />
         <h3>Back to home page</h3>
       </NavLink>
       <div className="detail-all">
@@ -55,7 +56,7 @@ const ProductDetail = () => {
             <BiCaretRight onClick={() => handleQuantityChange("increase")} />
           </div>
 
-          <button onClick={addToCart}>
+          <button onClick={handleAddToCart}>
             Add To Cart <BiCartAdd />
           </button>
         </div>

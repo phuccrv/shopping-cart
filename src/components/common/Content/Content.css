@@ -73,7 +73,7 @@
     }
 
     .content-text{
-        margin-top: 100px;
+        margin-top: 15px;
     }
 
     .content-text h1 {
@@ -81,9 +81,10 @@
     }
     .content-all{
         width: 95%;
+        height: 400px;
     }
     .content-text p{
-        margin-left: 50px;
+        margin-left: 5px;
     }
     .content-text button{
         margin: 20px;
