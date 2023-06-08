@@ -1,0 +1,82 @@
+.porduct-admin{
+    margin: 0px 20px;
+}
+
+.porduct-admin h2 {
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.btn-edit{
+    color: #0d99ff;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+.btn-delete{
+    color: red;
+    cursor: pointer;
+}
+
+.btn-add{
+    color: #44bd32;
+    cursor: pointer;
+}
+
+tbody tr img{
+    height: 100px;
+    height: 100px;
+}
+
+.form{
+    width: 600px;
+    border-radius: 10px;
+    background-color: #f5f6fa;
+    padding: 50px 10px 0 10px;
+    margin-top: 5px;
+    position: fixed;
+}
+
+.form .btn-add{
+    background-color: #f0932b;
+    color: white;
+    transition: 0.2s ease-out;
+}
+
+.form button:hover{
+    color: black;
+}
+
+/* .box-show-add{
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  } */
+
+.box-show-add label{
+    text-transform: capitalize;
+
+}
+
+.box-show-add input{
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.button-close{
+    width: 100px;
+    background-color: rgb(199, 57, 57);
+    margin: 30px 470px;
+    padding: 5px;
+}
+
+

@@ -4,7 +4,7 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/reducer/CartSLice";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 const CardProduct = (props) => {
   const { product } = props;

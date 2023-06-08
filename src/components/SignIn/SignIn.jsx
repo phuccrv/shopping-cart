@@ -4,7 +4,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/reducer/UserSlice";
 
-
 const SignIn = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = React.useState({});
@@ -20,24 +19,34 @@ const SignIn = () => {
   };
 
   // Handle cho thẻ Form
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
+// Handle cho thẻ Form
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    if (
+      inputValue.email === "admin@gmail.com" &&
+      inputValue.password === "admin123"
+    ) {
+      navigate("/AdminPage");
+    } else {
       const data = await dispatch(login(inputValue)).unwrap();
       // Đăng nhập thành công, chuyển hướng đến trang chủ
-      data && navigate("/")
-    } catch (error) {
-      // Xử lý lỗi đăng nhập
-      console.log(error);
-      setLoginError("Email or password is incorrect");
+      data && navigate("/");
     }
-  };
-
+  } catch (error) {
+    // Xử lý lỗi đăng nhập
+    console.log(error);
+    setLoginError("Email or password is incorrect");
+  }
+};
   return (
     <div className="content-Signin">
       <form onSubmit={handleSubmit}>
         <h3>Login Here</h3>
-        <img src={process.env.PUBLIC_URL + "/images/Starbucks-Logo.png"} alt="" />
+        <img
+          src={process.env.PUBLIC_URL + "/images/Starbucks-Logo.png"}
+          alt=""
+        />
         <label htmlFor="email">Email:</label>
         <input
           type="email"

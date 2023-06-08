@@ -19,11 +19,15 @@ export const login = createAsyncThunk("login/fetchAuth", async (payload) => {
   const response = await UserAPI.login(payload);
   console.log(response);
   localStorage.setItem("user", JSON.stringify(response.user));
-  localStorage.setItem(
-    "accessTokenRegister",
-    JSON.stringify(response.accessToken)
-  );
-  return response.user;
+  localStorage.setItem("accessTokenRegister", JSON.stringify(response.accessToken));
+
+  const userList = await UserAPI.getUserList(); // Lấy danh sách tài khoản từ API
+  const isAdmin = userList.some(user => user.email === 'admin@gmail.com'); // Kiểm tra xem có tài khoản admin@gmail.com hay không
+
+  return {
+    ...response.user,
+    isAdmin
+  };
 });
 
 const userSlice = createSlice({
@@ -37,8 +41,8 @@ const userSlice = createSlice({
     logout: (state) => {
       state.isLoggedIn = false;
       state.email = "";
-      localStorage.removeItem("user");
-      localStorage.removeItem("accessTokenRegister");
+      // localStorage.removeItem("user");
+      // localStorage.removeItem("accessTokenRegister");
     },
   },
   extraReducers: {
