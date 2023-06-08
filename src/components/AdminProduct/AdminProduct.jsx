@@ -4,6 +4,8 @@ import "./AdminProduct.css";
 import { BsPencilSquare, BsPlusSquare, BsTrash } from "react-icons/bs";
 import { storage } from "../../firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AdminProduct = () => {
   const [products, setProducts] = useState([]);
@@ -63,8 +65,18 @@ const AdminProduct = () => {
       price: newProduct.price,
       image: newProduct.image,
     };
-
     updatedProducts.push(newProductItem);
+    toast.success("Add product Success",{
+      position:"top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress:undefined,
+      theme:"colored",
+      className: "toast-message",
+    })
 
     localStorage.setItem("carts", JSON.stringify(updatedProducts));
     setProducts(updatedProducts);
@@ -79,6 +91,17 @@ const AdminProduct = () => {
 
   const handleDeleteProduct = (productId) => {
     const updatedProducts = products.filter((product) => product.id !== productId);
+    toast.error("delete product Success",{
+      position:"top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress:undefined,
+      theme:"colored",
+      className: "toast-message",
+    })
     localStorage.setItem("carts", JSON.stringify(updatedProducts));
     setProducts(updatedProducts);
   };
@@ -164,6 +187,7 @@ const AdminProduct = () => {
           </form>
         </div>
       )}
+      <ToastContainer/>
     </div>
   );
 };
