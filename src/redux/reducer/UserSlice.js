@@ -1,4 +1,3 @@
-
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { UserAPI } from "../../api/User";
 
@@ -7,20 +6,24 @@ export const register = createAsyncThunk(
   async (payload) => {
     const response = await UserAPI.register(payload);
     localStorage.setItem("user", JSON.stringify(response.user));
-  
-    localStorage.setItem("accessTokenRegister", JSON.stringify(response.accessToken));
-    console.log(555,response);
+
+    localStorage.setItem(
+      "accessTokenRegister",
+      JSON.stringify(response.accessToken)
+    );
+    // console.log(555, response);
     return response.user;
-  
   }
 );
 
-
 // Action này được sử dụng để thực hiện quá trình xác thực đăng nhập của người dùng
 export const login = createAsyncThunk("login/fetchAuth", async (payload) => {
-  const response = await UserAPI.login(payload);//UserAPI.login trả về một response chưa thông tin user và mã accessTokenRegister
-  localStorage.setItem("user", JSON.stringify(response.user));// khi nhận response thì lưu lên local chuyển về thành chuỗi để đọc và truy xuất
-  localStorage.setItem("accessTokenRegister", JSON.stringify(response.accessToken));
+  const response = await UserAPI.login(payload); //UserAPI.login trả về một response chưa thông tin user và mã accessTokenRegister
+  localStorage.setItem("user", JSON.stringify(response.user)); // khi nhận response thì lưu lên local chuyển về thành chuỗi để đọc và truy xuất
+  localStorage.setItem(
+    "accessTokenRegister",
+    JSON.stringify(response.accessToken)
+  );
   return {
     ...response.user, //muốn lấy về đối tượng nguyên thuỷ
   };
@@ -29,15 +32,18 @@ export const login = createAsyncThunk("login/fetchAuth", async (payload) => {
 // lấy danh sách user
 export const getUserList = createAsyncThunk("user/fetchUserList", async () => {
   const response = await UserAPI.listUsers();
-  const userList = response.map(user => ({ ...user }));
+  const userList = response.map((user) => ({ ...user }));
   return userList;
 });
 
-// // acction add user
-// export const addUser = createAsyncThunk("user/fetchAddUser", async (user) => {
-//   const response = await UserAPI.addUser(user);
-//   return response;
-// });
+// cập nhật user 
+export const updateUser = createAsyncThunk(
+  "user/updateUser",
+  async (payload) => {
+    const response = await UserAPI.updateUser(payload);
+    return response;
+  }
+);
 
 const userSlice = createSlice({
   name: "user",
@@ -70,6 +76,13 @@ const userSlice = createSlice({
     [getUserList.fulfilled]: (state, action) => {
       state.userList = action.payload;
     },
+    [updateUser.fulfilled]: (state, action) => {
+      const updatedUser = action.payload;
+      const index = state.userList.findIndex((user) => user.id === updatedUser.id);
+      if (index !== -1) {
+        state.userList[index] = updatedUser;
+      }
+    }
   },
 });
 

@@ -14,4 +14,8 @@ export class UserAPI {
     const url = "/users";
     return axiosClient.get(url);
   }
+  static updateUser(param) {
+    const url = `/users/${param}`;
+    return axiosClient.patch(url, param);
+  }
 }
