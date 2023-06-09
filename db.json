@@ -1,0 +1,217 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "trà sữa vàng",
+      "price": 1000,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    },
+    {
+      "id": 2,
+      "name": "trà sữa đỏ",
+      "price": 3000,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-1.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://png.pngtree.com/thumb_back/fw800/back_our/20190617/ourmid/pngtree-simple-and-stylish-fragrant-milk-tea-juice-drink-poster-image_130479.jpg"
+    },
+    {
+      "id": 3,
+      "name": "cà phê nâu kem",
+      "price": 2000,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-7.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://png.pngtree.com/thumb_back/fh260/background/20210205/pngtree-milk-tea-poster-background-image_543456.jpg"
+    },
+    {
+      "id": 4,
+      "name": "trà xanh kem",
+      "price": 3200,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-5.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://trasuaqq.com/upload/news/2-9619.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "trà vàng vàng",
+      "price": 500,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-6.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://anhdepfree.com/wp-content/uploads/2022/01/background-cac-loai-tra-sua_413594.jpg"
+    },
+    {
+      "id": 6,
+      "name": "trà sữa nâu 1 nửa",
+      "price": 700,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-3.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://sứckhoe.vn/wp-content/uploads/2019/05/Top-11-Qu%C3%A1n-tr%C3%A0-s%E1%BB%AFa-ngon-nh%E1%BA%A5t-th%C3%A0nh-ph%E1%BB%91-H%E1%BB%93-Ch%C3%AD-Minh.png"
+    },
+    {
+      "id": 7,
+      "name": "trà xanh có thạch",
+      "price": 200,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://digifood.vn/blog/wp-content/uploads/2021/05/freeze-tra-xanh-do-uong-ngon-ha-noi-highland-coffee.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": 8,
+      "name": "nước ép dứa",
+      "price": 400,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://digifood.vn/blog/wp-content/uploads/2021/05/tra-thai-xanh-circle-K-do-uong-ngon-ha-noi.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://images.foody.vn/res/g110/1098838/prof/s576x330/file_restaurant_photo_abqm_16430-15600f29-220125103254.jpg"
+    },
+    {
+      "id": 9,
+      "name": "trà sữa vàng",
+      "price": 550,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://thuthuatnhanh.com/wp-content/uploads/2021/11/background-tra-sua-thiet-ke-banner-poster-quang-cao.jpg"
+    },
+    {
+      "id": 10,
+      "name": "trà sữa đỏ",
+      "price": 330,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-1.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://img6.thuthuatphanmem.vn/uploads/2022/09/27/hinh-nen-tra-sua-dep_094656494.jpg"
+    },
+    {
+      "id": 11,
+      "name": "cà phê nâu kem",
+      "price": 95,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-7.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    },
+    {
+      "id": 12,
+      "name": "trà xanh kem",
+      "price": 800,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-5.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    },
+    {
+      "id": 13,
+      "name": "trà vàng vàng",
+      "price": 350,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-6.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    },
+    {
+      "id": 14,
+      "name": "trà sữa nâu 1 nửa",
+      "price": 120,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://vn.japo.news/contents/wp-content/uploads/2021/06/image-3.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    },
+    {
+      "id": 15,
+      "name": "trà xanh có thạch",
+      "price": 140,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://digifood.vn/blog/wp-content/uploads/2021/05/freeze-tra-xanh-do-uong-ngon-ha-noi-highland-coffee.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    },
+    {
+      "id": 16,
+      "name": "nước ép dứa",
+      "price": 170,
+      "type": "Nhìn là muốn mua liềng",
+      "image": "https://digifood.vn/blog/wp-content/uploads/2021/05/tra-thai-xanh-circle-K-do-uong-ngon-ha-noi.png",
+      "detail": "Đà Nẵng luôn là điểm đến vui chơi và du lịch cực kỳ thú vị , đặc biệt là các bạn trẻ. Không khó để tìm thấy những quán trà sữa ngay tại trung tâm thành phố cực kỳ thích hợp cho một buổi tụ họp hay đơn giản là muốn thưởng thức một ly trà sữa thơm ngon.",
+      "bgslice": "https://kiddy.edu.vn/wp-content/uploads/2023/05/Background-tra-sua-dep-doc-dao-hap-dan-nhat.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "phuccrv@gmail.com",
+      "password": "$2a$10$oC8pNZP7JtZD2vDTlXj8OeDL3sj6Dog9GppQY6deqdueqTebT8Or2",
+      "username": "phúc nguyễn",
+      "id": 1
+    },
+    {
+      "email": "anh@gmail.com",
+      "password": "$2a$10$0rAvm1ahx76C4jmOzE59le8.lIvlRZIxFIFXPFDaeOJtEfDNQdZQC",
+      "username": "anh ",
+      "id": 2
+    },
+    {
+      "email": "tandang@gmail.com",
+      "password": "$2a$10$xN9qM9YKGh8E5sts9jBzausznSGFySJehbncyETagqxF.8ZPD6lge",
+      "username": "tan",
+      "id": 3
+    },
+    {
+      "email": "tien@gmail.com",
+      "password": "$2a$10$E8vfSJ.0fY5vSATmHyjua.fN/rB4dcFNrB7t9uKp5A7TN6xDu06M.",
+      "username": "tien",
+      "id": 4
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$u5qIMAZVi32nfY21HXW3NOUOJDdXmr7fSc18XY5Q18R9PL9LEk8gC",
+      "username": "admin",
+      "id": 5
+    },
+    {
+      "email": "nhan@gmail.com",
+      "password": "$2a$10$rXPk14Fg4aD7dC6Ns0yuIus0Ml/gKlAn3jXsptFI.jfCG1xMgIfyy",
+      "username": "nhan",
+      "id": 6
+    },
+    {
+      "email": "quang@gmail.com",
+      "password": "$2a$10$Fnhk73Cx4uqLUKcoxo9dj.CN22ATmwz0K0jVsavthZmLFzJUu.oTe",
+      "username": "quang",
+      "id": 7
+    },
+    {
+      "email": "tt@gmail.com",
+      "password": "$2a$10$DVO3awCs8T1Y6HDel/NXoeiH4c5gODArCTCL2alwSQ8ccJr9FM5Ba",
+      "username": "thattuyevoi",
+      "id": 8
+    },
+    {
+      "email": "dan@gmail.com",
+      "password": "$2a$10$dhD.m3HfKUy/PxJwp/kFSu9DbZmj1cIMS9Z/Maye1DOeJhkUaUvUu",
+      "username": "danddddssss",
+      "id": 9
+    }
+  ],
+  "orders": [
+    {
+      "email": "",
+      "qantity": 0,
+      "name": "",
+      "nameProduct": "",
+      "priceProduct": "",
+      "pay": "",
+      "phone": "",
+      "address": "",
+      "total": ""
+    }
+  ]
+}
