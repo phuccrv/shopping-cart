@@ -47,30 +47,21 @@ tbody tr img{
     color: black;
 }
 
-/* .box-show-add{
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-  }
-    
-  @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-  } */
-
 .box-show-add label{
     text-transform: capitalize;
-
+    margin-left: 10px;
+    font-weight: bold;
 }
 
 .box-show-add input{
     border: none;
-    border-bottom: 2px solid black;
+    border: 1px solid #c2c2c2;
 }
+
+.input-last{
+    border: none !important;
+}
+
 
 .button-close{
     width: 100px;

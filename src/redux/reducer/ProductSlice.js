@@ -3,14 +3,14 @@ import ProductAPI from "../../api/Product";
 
 export const handleCallProductAPI = createAsyncThunk(
   "products/fetchAllProduct",
-  async (action) => {
+  async () => {
     // Call API
     const response = await ProductAPI.getAllProduct();
     const data = response;
     console.log("data sau khi call:", data);
     // Lưu vào LocalStorage
-    localStorage.setItem("carts", JSON.stringify(data));
-    // Trả về một payload
+    localStorage.setItem("Products", JSON.stringify(data));
+    // Trả về một data
     return data;
   }
 );

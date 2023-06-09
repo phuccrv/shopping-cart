@@ -1,3 +1,4 @@
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { UserAPI } from "../../api/User";
 
@@ -5,7 +6,6 @@ export const register = createAsyncThunk(
   "register/fetchAuth",
   async (payload) => {
     const response = await UserAPI.register(payload);
-    console.log(response)
     localStorage.setItem("user", JSON.stringify(response.user));
     localStorage.setItem(
       "accessTokenRegister",
@@ -15,19 +15,22 @@ export const register = createAsyncThunk(
   }
 );
 
+
+// Action này được sử dụng để thực hiện quá trình xác thực đăng nhập của người dùng
 export const login = createAsyncThunk("login/fetchAuth", async (payload) => {
-  const response = await UserAPI.login(payload);
-  console.log(response);
-  localStorage.setItem("user", JSON.stringify(response.user));
+  const response = await UserAPI.login(payload);//UserAPI.login trả về một response chưa thông tin user và mã accessTokenRegister
+  localStorage.setItem("user", JSON.stringify(response.user));// khi nhận response thì lưu lên local chuyển về thành chuỗi để đọc và truy xuất
   localStorage.setItem("accessTokenRegister", JSON.stringify(response.accessToken));
-
-  const userList = await UserAPI.getUserList(); // Lấy danh sách tài khoản từ API
-  const isAdmin = userList.some(user => user.email === 'admin@gmail.com'); // Kiểm tra xem có tài khoản admin@gmail.com hay không
-
   return {
-    ...response.user,
-    isAdmin
+    ...response.user, //muốn lấy về đối tượng nguyên thuỷ
   };
+});
+
+// lấy danh sách user
+export const getUserList = createAsyncThunk("user/fetchUserList", async () => {
+  const response = await UserAPI.listUsers();
+  const userList = response.map(user => ({ ...user }));
+  return userList;
 });
 
 const userSlice = createSlice({
@@ -36,11 +39,13 @@ const userSlice = createSlice({
     isLoggedIn: false,
     email: "",
     username: "",
+    userList: [],
   },
   reducers: {
     logout: (state) => {
       state.isLoggedIn = false;
       state.email = "";
+      state.userList = [];
       // localStorage.removeItem("user");
       // localStorage.removeItem("accessTokenRegister");
     },
@@ -55,6 +60,9 @@ const userSlice = createSlice({
       state.isLoggedIn = true;
       state.email = action.payload.email;
       state.username = action.payload.username;
+    },
+    [getUserList.fulfilled]: (state, action) => {
+      state.userList = action.payload;
     },
   },
 });

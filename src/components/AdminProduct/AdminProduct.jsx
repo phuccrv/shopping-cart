@@ -11,24 +11,46 @@ const AdminProduct = () => {
   const [products, setProducts] = useState([]);
   const [imageList, setImageList] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [editProductId, setEditProductId] = useState(null);
+  const [formButtonText, setFormButtonText] = useState("Add Product");
   const [newProduct, setNewProduct] = useState({
     id: "",
     name: "",
     price: 0,
     image: "",
   });
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
-    const localStorageProducts = JSON.parse(localStorage.getItem("carts")) || [];
+    const localStorageProducts =
+      JSON.parse(localStorage.getItem("Products")) || [];
     setProducts(localStorageProducts);
   }, []);
 
   const toggleForm = () => {
     setShowForm(!showForm);
+    setIsEditing(false);
+    setEditProductId(null);
+    setFormButtonText("Add Product");
+    setNewProduct({
+      id: "",
+      name: "",
+      price: 0,
+      image: "",
+    });
   };
 
   const closeForm = () => {
     setShowForm(false);
+    setIsEditing(false);
+    setEditProductId(null);
+    setFormButtonText("Add Product");
+    setNewProduct({
+      id: "",
+      name: "",
+      price: 0,
+      image: "",
+    });
   };
 
   const handleInputChange = (e) => {
@@ -36,6 +58,25 @@ const AdminProduct = () => {
       ...newProduct,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleEditProduct = (productId) => {
+    setEditProductId(productId);
+    setFormButtonText("Edit Product");
+    setIsEditing(true);
+
+    const productToEdit = products.find((product) => product.id === productId);
+
+    if (productToEdit) {
+      setNewProduct({
+        id: productToEdit.id,
+        name: productToEdit.name,
+        price: productToEdit.price,
+        image: productToEdit.image,
+      });
+    }
+
+    setShowForm(true);
   };
 
   const handleImageChange = (e) => {
@@ -55,8 +96,6 @@ const AdminProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
 
-    // const newProductId = Date.now();
-
     const updatedProducts = [...products];
 
     const newProductItem = {
@@ -66,42 +105,74 @@ const AdminProduct = () => {
       image: newProduct.image,
     };
     updatedProducts.push(newProductItem);
-    toast.success("Add product Success",{
-      position:"top-right",
+    toast.success("Add product Success", {
+      position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      progress:undefined,
-      theme:"colored",
+      progress: undefined,
+      theme: "colored",
       className: "toast-message",
-    })
+    });
 
     localStorage.setItem("carts", JSON.stringify(updatedProducts));
     setProducts(updatedProducts);
 
-    setNewProduct({
-      id: "",
-      name: "",
-      price: 0,
-      image: "",
-    });
+    closeForm();
+  };
+
+  const handleUpdateProduct = (e) => {
+    e.preventDefault();
+
+    const updatedProducts = [...products];
+
+    const updatedProduct = {
+      id: newProduct.id,
+      name: newProduct.name,
+      price: newProduct.price,
+      image: newProduct.image,
+    };
+
+    const index = updatedProducts.findIndex(
+      (product) => product.id === editProductId
+    );
+
+    if (index !== -1) {
+      updatedProducts[index] = updatedProduct;
+      toast.success("Update product Success", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        className: "toast-message",
+      });
+    }
+
+    localStorage.setItem("carts", JSON.stringify(updatedProducts));
+    setProducts(updatedProducts);
+
+    closeForm();
   };
 
   const handleDeleteProduct = (productId) => {
     const updatedProducts = products.filter((product) => product.id !== productId);
-    toast.error("delete product Success",{
-      position:"top-right",
+    toast.error("Delete product Success", {
+      position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      progress:undefined,
-      theme:"colored",
+      progress: undefined,
+      theme: "colored",
       className: "toast-message",
-    })
+    });
     localStorage.setItem("carts", JSON.stringify(updatedProducts));
     setProducts(updatedProducts);
   };
@@ -132,7 +203,10 @@ const AdminProduct = () => {
                 </td>
                 <td>
                   <BsPlusSquare className="btn-add" onClick={toggleForm} />
-                  <BsPencilSquare className="btn-edit" />
+                  <BsPencilSquare
+                    className="btn-edit"
+                    onClick={() => handleEditProduct(product.id)}
+                  />
                   <BsTrash
                     className="btn-delete"
                     onClick={() => handleDeleteProduct(product.id)}
@@ -145,7 +219,7 @@ const AdminProduct = () => {
       </div>
       {showForm && (
         <div className="box-show-add">
-          <form className="form" onSubmit={handleAddProduct}>
+          <form className="form"  onSubmit={isEditing ? handleUpdateProduct : handleAddProduct}>
             <label htmlFor="">Enter ID</label>
             <input
               type="number"
@@ -172,6 +246,7 @@ const AdminProduct = () => {
             />
             <label htmlFor="">Add Image</label>
             <input
+              className="input-last"
               type="file"
               placeholder="Choose image file"
               name="image"
@@ -179,7 +254,7 @@ const AdminProduct = () => {
             />
             <br />
             <button className="btn-add" type="submit">
-              Add Product
+              {formButtonText}
             </button>
             <button className="button-close" type="button" onClick={closeForm}>
               Close
@@ -187,7 +262,7 @@ const AdminProduct = () => {
           </form>
         </div>
       )}
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
