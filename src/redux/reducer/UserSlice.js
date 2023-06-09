@@ -7,11 +7,11 @@ export const register = createAsyncThunk(
   async (payload) => {
     const response = await UserAPI.register(payload);
     localStorage.setItem("user", JSON.stringify(response.user));
-    localStorage.setItem(
-      "accessTokenRegister",
-      JSON.stringify(response.accessToken)
-    );
+  
+    localStorage.setItem("accessTokenRegister", JSON.stringify(response.accessToken));
+    console.log(555,response);
     return response.user;
+  
   }
 );
 
@@ -32,6 +32,12 @@ export const getUserList = createAsyncThunk("user/fetchUserList", async () => {
   const userList = response.map(user => ({ ...user }));
   return userList;
 });
+
+// // acction add user
+// export const addUser = createAsyncThunk("user/fetchAddUser", async (user) => {
+//   const response = await UserAPI.addUser(user);
+//   return response;
+// });
 
 const userSlice = createSlice({
   name: "user",
