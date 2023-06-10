@@ -4,16 +4,30 @@ import "./AdminOrder.css";
 
 const AdminOrder = () => {
   const [showDetails, setShowDetails] = useState(false);
-  const cartLocal = JSON.parse(localStorage.getItem("order")) || [];
-  const orderLocal = JSON.parse(localStorage.getItem("carts")) || [];
-  console.log("data lấy về:", cartLocal);
+  const [hitoryCart, setHitoryCart] = useState([]);
+  const cartLocal = JSON.parse(localStorage.getItem("orders")) || [];
+  console.log(22222, cartLocal);
+  console.log(333333, hitoryCart);
 
-  const handleViewDetails = () => {
+  const handleViewDetails = (item) => {
     setShowDetails(true);
+    setHitoryCart(item);
+    console.log(6666, item);
   };
 
   const handleClose = () => {
     setShowDetails(false);
+  };
+
+  const calculateTotalPrice = () => {
+    if (!hitoryCart || hitoryCart.length === 0) {
+      return 0;
+    }
+    const totalPrice = hitoryCart.reduce(
+      (sum, product) => sum + product.price * product.quantity,
+      0
+    );
+    return totalPrice;
   };
 
   return (
@@ -31,7 +45,7 @@ const AdminOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {[cartLocal]?.map((infor, index) => (
+            {cartLocal?.map((infor, index) => (
               <tr key={infor.id}>
                 <td>{index + 1}</td>
                 <td>{infor.fullname}</td>
@@ -39,7 +53,7 @@ const AdminOrder = () => {
                 <td>
                   <button
                     className="approve-button"
-                    onClick={handleViewDetails}
+                    onClick={() => handleViewDetails(infor.cart)}
                   >
                     Show
                   </button>
@@ -70,6 +84,10 @@ const AdminOrder = () => {
                   <h4>Address:</h4>
                   <p>{infor.address}</p>
                 </div>
+                <div className="infor-text">
+                  <h4>Total order amount:</h4>
+                  <p>$ {calculateTotalPrice()}</p>
+                </div>
               </div>
             ))}
 
@@ -84,16 +102,18 @@ const AdminOrder = () => {
                 </tr>
               </thead>
               <tbody className="table-product">
-                {orderLocal.map((product)=>(
-                  <tr key={product.id}>
+                {hitoryCart.map((product) => (
+                  <tr>
                     <td>{product.id}</td>
-                    <td><img src={product.image} alt="" /></td>
+                    <td>
+                      <img src={product.image} alt="" />
+                    </td>
+
                     <td>{product.price}</td>
                     <td>{product.quantity}</td>
                     <td>{product.type}</td>
-                </tr>
+                  </tr>
                 ))}
-                
               </tbody>
             </table>
           </div>
