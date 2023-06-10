@@ -16,6 +16,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const ProductDetail = () => {
   const dispatch = useDispatch();
+  
   const ProductLocation = useLocation();
 
   const { image, name, detail, price, id } = ProductLocation.state;

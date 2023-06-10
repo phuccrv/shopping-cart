@@ -23,7 +23,9 @@ const HeaderHome = () => {
 
   const handleSearch = () => {
     dispatch(searchProducts(searchTerm));
+    setSearchTerm("");
   };
+
 
   const totalItems = cartItems?.reduce((total, item) => total + item.quantity, 0) || 0;
 

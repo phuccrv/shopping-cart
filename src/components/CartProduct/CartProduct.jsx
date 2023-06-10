@@ -1,8 +1,9 @@
 import { BsFillCaretUpSquareFill, BsFillCaretDownSquareFill, BsFillTrashFill,} from"react-icons/bs";
-import React from "react";
+import React, { useState } from "react";
 import "./CartProduct.css";
 import { useDispatch } from "react-redux";
 import { deleteCart, handleQuantity } from "../../redux/reducer/CartSLice";
+
 
 const CartProduct = (props) => {
   const dispatch = useDispatch();
@@ -14,6 +15,8 @@ const CartProduct = (props) => {
   const handleDelete = () => {
     dispatch(deleteCart(product.id));
   };
+  
+
 
   return (
     <section className="cart-product">

@@ -62,9 +62,9 @@
     .content-text button{
         margin: 50px;
     }
-    .content-text p{
+    /* .content-text p{
         margin-left: 165px;
-    }
+    } */
   }
 
 @media screen and (max-width: 432px) {

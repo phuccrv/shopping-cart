@@ -49,3 +49,33 @@ table {
   button{
     margin-top: 0px;
   }
+
+
+.btn-close-infor{
+  width: 100px;
+  font-size: 15px;
+  padding: 10px;
+  background-color: rgb(252, 129, 129);
+  border: none;
+  font-weight: bold;
+  float: right;
+  margin: 10px;
+}
+
+.box-infor{
+  margin: 20px 100px;
+}
+.table-infor{
+  margin-top: 20px;
+}
+
+.infor-text{
+  display: flex;
+}
+.infor-text p{
+  margin-left: 10px;
+}
+
+.table-product tr td:last-child{
+  font-size: 15px;
+}

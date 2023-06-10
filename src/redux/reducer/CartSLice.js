@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 //phục vụ cho việc call bất đồng bộ để lưu data lên thằng redux
 //createAsyncThunk sẽ nhận vào 2 tham số, thứ nhất là 1 chuỗi nên đặt tên theo cách call
 //nó được hiểu là một action
@@ -18,7 +19,8 @@ const CartSlice = createSlice({
       );
       if (findIndexProduct >= 0) {
         state[findIndexProduct].quantity += 1;
-        state[findIndexProduct].total = state[findIndexProduct].quantity * state[findIndexProduct].price;
+        state[findIndexProduct].total =
+          state[findIndexProduct].quantity * state[findIndexProduct].price;
       } else {
         let quantity = 1;
         state.push({ ...action.payload, quantity });
@@ -51,7 +53,7 @@ const CartSlice = createSlice({
       }
     },
     checkOutCart: (state, action) => {
-      // chức năng check out thanh toán
+      
     },
   },
 });

@@ -18,7 +18,7 @@ export const handleCallProductAPI = createAsyncThunk(
 export const searchProducts = createAsyncThunk(
   "products/searchProducts",
   async (searchTerm) => {
-    const products = JSON.parse(localStorage.getItem("carts")) || [];
+    const products = JSON.parse(localStorage.getItem("Products")) || []; // Sửa từ "carts" thành "Products"
     const filteredProducts = products.filter((product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.price.toString().includes(searchTerm)
